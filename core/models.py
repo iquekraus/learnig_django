@@ -13,7 +13,7 @@ class PontoTuristico(models.Model):
     resources = models.ManyToManyField(Recurso)
     comments = models.ManyToManyField(Comment)
     reviews = models.ManyToManyField(Review)
-    address = models.ForeignKey(Address, on_delete=models.CASCADE)
+    address = models.ForeignKey(Address, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.name

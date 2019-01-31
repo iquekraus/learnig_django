@@ -1,4 +1,5 @@
-"""pontos_turisticos URL Configuration
+"""pontos_turirouter = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)sticos URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -15,7 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include
+from rest_framework import routers
+
+from core.api.viewsets import PontoTuristicoViewSet
+from recursos.api.viewsets import RecursoViewSet
+
+
+router = routers.DefaultRouter()
+router.register(r'pontoturistico', PontoTuristicoViewSet)
+router.register(r'recurso', RecursoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include(router.urls))
 ]

@@ -14,6 +14,8 @@ from address.api.viewsets import AddressViewSet
 from comments.api.viewsets import CommentViewSet
 from reviews.api.viewsets import ReviewViewSet
 
+from rest_framework.authtoken.views import obtain_auth_token
+
 
 router = routers.DefaultRouter()
 router.register(r'pontosturisticos', PontoTuristicoViewSet, basename='PontoTuristico')
@@ -24,5 +26,6 @@ router.register(r'reviews', ReviewViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('login/', obtain_auth_token)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Linha para conseguir visualisar imagens em modo dev

@@ -16,6 +16,14 @@ class PontoTuristico(models.Model):
     address = models.ForeignKey(Address, on_delete=models.CASCADE, null=True, blank=True)
     photo = models.ImageField(upload_to='pontos_turisticos', null=True, blank=True)
 
+
+    @property
+    def is_approved(self):
+        if self.approved:
+            return 'Yes, it is approved!'
+        return 'Oh no, very embarrassing!'
+
+
     def __str__(self):
         return self.name
 

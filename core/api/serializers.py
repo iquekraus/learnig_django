@@ -19,7 +19,7 @@ class PontoTuristicoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PontoTuristico
         fields = ('id', 'name', 'description', 'name_with_description',
-                  'is_approved', 'approved', 'photo', 'address', 'resourses', 'comments', 'reviews')
+                  'is_approved', 'approved', 'photo', 'address', 'resources', 'comments', 'reviews')
 
-    def get_name_with_description(self, obj): # É melhor fazer isso nos models, parecido com a funcao is_approved
+    def get_name_with_description(self, obj): # É melhor fazer isso nos models, parecido com is_approved
         return '%s - %s' % (obj.name, obj.description)

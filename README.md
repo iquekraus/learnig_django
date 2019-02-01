@@ -15,3 +15,11 @@
     
 ### Creating an App
     python manage.py startapp core
+    
+### Installing Pillow
+    pip install Pillow
+    
+### Installing Django-Filter
+https://www.django-rest-framework.org/api-guide/filtering/
+    
+    pip install django-filter

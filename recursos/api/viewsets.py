@@ -7,3 +7,4 @@ class RecursoViewSet(ModelViewSet):
 
     queryset = Recurso.objects.all()
     serializer_class = RecursoSerializer
+    filter_fields = ('id', 'name', 'description')

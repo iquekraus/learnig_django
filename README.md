@@ -28,9 +28,10 @@
 
 [Tutorial here](https://devcenter.heroku.com/articles/heroku-cli)
 
-[And here](https://devcenter.heroku.com/articles/heroku-cli)
+[And here](https://github.com/Gpzim98/django-heroku)
     
     $ sudo snap install --classic heroku
+    $ heroku plugins:install heroku-config
     $ heroku login
     
     (venv) pip install python-decouple
